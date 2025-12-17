@@ -239,7 +239,6 @@ offersData.forEach(o => {
   `;
 });
 
-// Arrows
 document.getElementById("offerLeft").onclick = () => {
   list.scrollBy({ left: -320, behavior: "smooth" });
 };
@@ -252,44 +251,28 @@ document.getElementById("offerRight").onclick = () => {
 
 
 
-var map = L.map('mapbox').setView([26.8206, 30.8025], 5.5); // Center on Egypt
+const mapBox = document.getElementById('mapbox');
 
-  // Tile Style (Modern Light Look)
+if (mapBox) {
+  var map = L.map('mapbox').setView([26.8206, 30.8025], 5.5);
+
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
   }).addTo(map);
 
-  // Optional Marker (Cairo)
   L.marker([30.0444, 31.2357])
     .addTo(map)
     .bindPopup("<b>Cairo</b><br>Capital of Egypt.");
-
-
-
-
-
-
-
-
+}
 
 
 
 
 
 // Load feedback from LocalStorage on page load
-window.addEventListener("load", () => {
-  // لو LocalStorage فاضي، نضيف تعليقات افتراضية
-  if (!localStorage.getItem("feedback")) {
-    const defaultFeedback = [
-      { name: "Alice", comment: "Amazing trip!", rating: 5 },
-      { name: "Bob", comment: "Had a great experience.", rating: 4 },
-      { name: "Charlie", comment: "Loved the service!", rating: 5 }
-    ];
-    localStorage.setItem("feedback", JSON.stringify(defaultFeedback));
-  }
-
-  loadFeedback(); // بعد كده نعرض كل التعليقات
+window.addEventListener('DOMContentLoaded', function() {
+  loadFeedback();
 });
 
 function addFeedback() {

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nivirra — Trips</title>
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand brand" href="#">
+        <img class="w-100" src="./images/logo.png" alt="">
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center fs-5">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#trips">Trips</a></li>
+          <li class="nav-item"><a class="nav-link" href="./index.html">Tailor Tour</a></li>
+          <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
+        </ul>
+        <!-- <a class="btn btn-sm ms-3" href="#contact"
+          style="background:var(--primary);color:#fff;border-radius:10px;padding:10px 14px;font-weight:700">Enquire
+          Now</a> -->
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <!-- HERO -->
+  <header class="hero-trips text-center">
+    <div class="container">
+      <div class="w-50 m-auto">
+        <!-- <div class="container"> -->
+          <h1 class="text-white text-uppercase">Luxury Travel Experiences</h1>
+        <!-- </div> -->
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+  
+  
+  <section class="desc m-auto text-dark">
+    <div class="container">
+      <h5 class="fw-bold mb-4">From Nile to ancient temples, Luxor and Aswan await you. </h5>
+      <p class="text-trip m-auto">
+        Experience history, culture, and hidden gems your way – at your pace or beyond your limits.
+        Have a passion? Photography, sailing, or local crafts – we’ll craft the trip around it.
+      </p>
+    </div>
+  </section>
+  
+  <main class="container pb-5 bt-grid">
+
+    <section>
+      
+      <div class="text-center py-4">
+        <h1 class="h4 mb-1">Trips</h1>
+        <div class="text-muted">Explore our available trips — click any tile to view details.</div>
+      </div>
+
+      <div class="my-3 search">
+        <input id="q" class="form-control w-25" placeholder="Search trips by name, city or type" style="min-width:220px">
+      </div>
+    </section>
+
+    <!-- Grid: tiles injected by JS -->
+    <div id="grid" class="row g-3"></div>
+
+    <div id="empty" class="text-center text-muted mt-4" style="display:none">No trips found.</div>
+  </main>
+
+  <!-- Load the separate JS file (trips-data.js) -->
+   <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/trips-data.js"></script>
+</body>
+
+</html>

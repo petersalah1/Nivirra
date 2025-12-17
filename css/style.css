@@ -4,7 +4,11 @@
     --muted: #6A6A6A;
     --gold: #F7C873;
     --radius: 14px;
+    --accent: #0d6efd;
+}
 
+* {
+    box-sizing: border-box
 }
 
 a {
@@ -30,17 +34,19 @@ body {
     font-weight: 800;
     width: 12%;
 }
+
 @media screen and (max-width: 990px) {
-    .brand  {
+    .brand {
         width: 25% !important
     }
-} 
+}
 
 @media screen and (max-width: 400px) {
     .brand {
         width: 35% !important
     }
 }
+
 /* HERO */
 .hero {
     position: relative;
@@ -49,6 +55,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
+    /* background-image: url(../images/background-hero.avif); */
 }
 
 /* Video Background */
@@ -74,11 +81,7 @@ body {
 
 /* Content Overlay Box */
 .hero .overlay {
-    background: linear-gradient(
-        180deg,
-        rgba(4, 177, 184, 0.14),
-        rgba(4, 177, 184, 0.06)
-    );
+    background: linear-gradient(180deg, rgba(4, 177, 184, 0.14), rgba(4, 177, 184, 0.06));
     backdrop-filter: blur(2px);
     padding: 48px;
     border-radius: 18px;
@@ -241,27 +244,54 @@ body {
     overflow: hidden;
 }
 
+.offers-wrapper {
+    position: relative;
+}
+
 .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--primary);
-    color: #fff;
-    border: none;
-    padding: 5px 16px;
-    font-size: 22px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    border: none;
+    background: #fff;
+    color: var(--primary);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
     z-index: 10;
 }
 
+.arrow i {
+    font-size: 16px;
+}
+
 .arrow.left {
-    left: -10px;
+    left: -18px;
 }
 
 .arrow.right {
-    right: -10px;
+    right: -18px;
 }
+
+.arrow:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+    .arrow {
+        display: none;
+    }
+}
+
 
 
 .offer-media {
@@ -289,61 +319,63 @@ body {
 
 
 .feedback-slider-wrapper {
-  overflow-x: auto;
-  padding-bottom: 15px;
+    overflow-x: auto;
+    padding-bottom: 15px;
 }
 
 .feedback-slider {
-  display: flex;
-  gap: 20px;
-  scroll-behavior: smooth;
+    display: flex;
+    gap: 20px;
+    scroll-behavior: smooth;
 }
 
 .feedback-card {
-  flex: 0 0 300px;
-  background: #0f0f0f;
-  border-radius: 16px;
-  padding: 18px 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
+    flex: 0 0 300px;
+    background: #f2ffff;
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 3px var(--primary) solid;
 }
 
 .feedback-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .feedback-card .name {
-  font-weight: 700;
-  color: var(--primary);
-  font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.05rem;
 }
 
 .feedback-card .rating {
-  color: #ffb400;
-  margin: 5px 0;
-  font-size: 1rem;
+    color: #ffb400;
+    margin: 5px 0;
+    font-size: 1rem;
 }
 
 .feedback-card .comment {
-  font-size: 0.95rem;
-  color: #f7f4f4;
-  line-height: 1.5;
+    font-size: 0.95rem;
+    color: #000000;
+    line-height: 1.5;
 }
+
 #feedback .btn {
     background-color: var(--primary);
     width: 12%;
 }
 
+@media screen and (max-width: 775px) {
+    #feedback .btn {
+        width: 25%;
+    }
+}
 
 
 
 
-
-
-
-
-    
 footer {
     background: #041217;
     color: #cfeff1
@@ -382,4 +414,259 @@ footer a {
         height: 350px;
     }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************** trip page **************************************/
+
+/******************************
+   TRIPS PAGE – FINAL STYLES
+******************************/
+
+/* ========== HERO TRIPS ========== */
+.hero-trips {
+    position: relative;
+    height: 50vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/sean-oulashin.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.hero-trips::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(6, 44, 46, 0.55), rgba(6, 44, 46, 0.75));
+    z-index: 0;
+}
+
+/* .hero-trips .overlay {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(80, 226, 231, 0.18), rgba(4, 177, 184, 0.08));
+    backdrop-filter: blur(3px);
+    padding: 48px 56px;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+} */
+
+.hero-trips h1 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    margin-inline: -100px;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-trips h1 {
+    font-size: 28px;
+    margin-inline: -95px;
+}
+}
+
+/* ========== DESCRIPTION SECTION ========== */
+.desc {
+    background-color: #effaff;
+    color: #fff;
+    text-align: center;
+    padding-block: 100px;
+}
+
+.desc h5 {
+    font-size: 20px;
+}
+
+.text-trip {
+    width: 60%;
+    margin: auto;
+    font-size: 16px;
+    line-height: 1.9;
+    opacity: .95;
+}
+
+@media (max-width: 768px) {
+    .text-trip {
+        width: 90%;
+    }
+}
+
+/* ========== GRID WRAPPER ========== */
+.bt-grid {
+    margin-top: 40px;
+    font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+/* ========== TRIP TILE ========== */
+.bt-grid .tile {
+    position: relative;
+    display: block;
+    min-height: 240px;
+    height: 350px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #000;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.bt-grid .tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* IMAGE */
+.bt-grid .tile .media {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform .6s ease;
+}
+
+.bt-grid .tile:hover .media {
+    transform: scale(1.08);
+}
+
+/* DARK GRADIENT */
+.bt-grid .tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 44, 46, 0.85), rgba(6, 44, 46, 0.15));
+    z-index: 1;
+}
+
+/* CONTENT */
+.bt-grid .tile .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 26px;
+    pointer-events: none;
+}
+
+.bt-grid .tile h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: .3px;
+}
+
+.bt-grid .tile p {
+    font-size: 14px;
+    margin: 0;
+    opacity: .9;
+    max-width: 85%;
+}
+
+/* META */
+.bt-grid .meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.bt-grid .meta .badge {
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    border-radius: 999px;
+    padding: .35rem .6rem;
+    font-weight: 600;
+}
+
+/* SIZE VARIANTS */
+.tile.h-lg {
+    min-height: 340px;
+}
+
+.tile.h-md {
+    min-height: 280px;
+}
+
+/* ========== SEARCH BAR ========== */
+.search {
+    right: 100px;
+}
+
+.search input.form-control:focus {
+    box-shadow: 0 0 0 .25rem rgba(4, 177, 184, .25);
+}
+
+
+#q {
+    border-radius: 999px;
+    padding-left: 18px;
+}
+
+/* ========== EMPTY STATE ========== */
+#empty {
+    font-size: 18px;
+    opacity: .7;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 576px) {
+    .bt-grid .tile {
+        min-height: 200px;
+    }
+
+    .bt-grid .tile h3 {
+        font-size: 18px;
+    }
+/* 
+    .hero-trips .overlay {
+        padding: 28px;
+    } */
 }

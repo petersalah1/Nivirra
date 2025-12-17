@@ -27,7 +27,8 @@
           class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav ms-auto align-items-lg-center fs-5">
-          <li class="nav-item"><a class="nav-link active" href="#trips">Trips</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="trips.html">Trips</a></li>
           <li class="nav-item"><a class="nav-link" href="#tailor">Tailor Tour</a></li>
           <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
           <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
@@ -39,40 +40,40 @@
     </div>
   </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <!-- Background Video -->
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="images/bgvideo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <!-- HERO -->
+  <header class="hero">
+    <!-- Background Video -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="images/bgvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-7">
-        <div class="overlay">
-          <h1 class="display-5">Discover Egypt — Tailor-made trips</h1>
-          <p class="lead">
-            From Nile cruises to Red Sea adventures.
-            Build your trip or choose one of our featured packages.
-          </p>
-          <div class="mt-4 d-flex gap-2 flex-wrap">
-            <a href="#tailor" class="btn btn-light fw-bold" style="color:var(--primary)">
-              Customize your trip
-            </a>
-            <a href="#trips" class="btn btn-outline-light border-white fw-bold">
-              Explore trips
-            </a>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="overlay">
+            <h1 class="display-5">Discover Egypt — Tailor-made trips</h1>
+            <p class="lead">
+              From Nile cruises to Red Sea adventures.
+              Build your trip or choose one of our featured packages.
+            </p>
+            <div class="mt-4 d-flex gap-2 flex-wrap">
+              <a href="#tailor" class="btn btn-light fw-bold" style="color:var(--primary)">
+                Customize your trip
+              </a>
+              <a href="#trips" class="btn btn-outline-light border-white fw-bold">
+                Explore trips
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-lg-5 d-none d-lg-block">
-        <!-- small promo cards -->
+        <div class="col-lg-5 d-none d-lg-block">
+          <!-- small promo cards -->
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
 
   <main class="pt-5">
@@ -80,7 +81,7 @@
     <section class="container py-5" id="trips">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="section-title">Explore Our Trips</h2>
-        <a href="#" class="text-decoration-none" style="color:var(--primary)">View all</a>
+        <a href="./trips.html" class="text-decoration-none" style="color:var(--primary)">View all</a>
       </div>
       <div class="row g-4">
         <div class="col-md-4">
@@ -91,7 +92,7 @@
               <p class="small text-muted">Pyramids, Egyptian Museum & Khan El Khalili</p>
               <div class="d-flex justify-content-between align-items-center mt-3">
                 <div class="price">$120</div>
-                <div><a class="btn btn-sm text-white" style="background:var(--primary)" href="#">Book</a></div>
+                <div><a class="btn btn-sm text-white" style="background:var(--primary)" href="#">Explore trip</a></div>
               </div>
             </div>
           </div>
@@ -105,7 +106,7 @@
               <p class="small text-muted">Temples, tombs and Nile views</p>
               <div class="d-flex justify-content-between align-items-center mt-3">
                 <div class="price">$180</div>
-                <div><a class="btn btn-sm text-white" style="background:var(--primary)" href="#">Book</a></div>
+                <div><a class="btn btn-sm text-white" style="background:var(--primary)" href="#">Explore trip</a></div>
               </div>
             </div>
           </div>
@@ -119,12 +120,11 @@
               <p class="small text-muted">Colorful reefs & water sports</p>
               <div class="d-flex justify-content-between align-items-center mt-3">
                 <div class="price">$250</div>
-                <div><a class="btn btn-sm text-white" style="background:var(--primary)" href="#">Book</a></div>
+                <div><a class="btn btn-sm text-white" style="background:var(--primary)" href="#">Explore trip</a></div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -227,17 +227,21 @@
     <section class="container py-5" id="offers">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="section-title">Special Offers</h2>
-        <a href="#" class="text-decoration-none" style="color:var(--primary)">See all offers</a>
+        <!-- <a href="#" class="text-decoration-none" style="color:var(--primary)">See all offers</a> -->
       </div>
 
       <div class="offers-wrapper">
-        <button class="arrow left" id="offerLeft">‹</button>
+        <button class="arrow left" id="offerLeft">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
         <div class="offers-scroll" id="offersList">
-
+          <!-- offers cards -->
         </div>
 
-        <button class="arrow right" id="offerRight">›</button>
+        <button class="arrow right" id="offerRight">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </section>
 
@@ -250,6 +254,7 @@
 
       <!-- Slider Container -->
       <div class="feedback-slider-wrapper">
+
         <div id="feedback-slider" class="feedback-slider">
           <!-- Feedback cards will appear here -->
         </div>
@@ -273,18 +278,6 @@
         <button class="btn" onclick="addFeedback()">Submit</button>
       </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- Map -->
