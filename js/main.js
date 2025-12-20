@@ -35,17 +35,26 @@ $(document).ready(function() {
 function initNavbar() {
   const navbar = $('.navbar');
   const sections = $('section[id]');
+  let ticking = false;
   
   // إضافة class عند السكرول
   $(window).on('scroll', function() {
-    if ($(window).scrollTop() > 50) {
-      navbar.addClass('scrolled');
-    } else {
-      navbar.removeClass('scrolled');
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        if ($(window).scrollTop() > 50) {
+          navbar.addClass('scrolled');
+        } else {
+          navbar.removeClass('scrolled');
+        }
+        
+        // تحديث active link بناءً على الـ section
+        updateActiveLink();
+        
+        ticking = false;
+      });
+      
+      ticking = true;
     }
-    
-    // تحديث active link بناءً على الـ section
-    updateActiveLink();
   });
   
   // تحديث الـ active link
@@ -100,7 +109,7 @@ function initBackToTop() {
   
   // الرجوع للأعلى عند الضغط
   backToTop.on('click', function() {
-    $('html, body').animate({ scrollTop: 0 }, 600);
+    $('html, body').stop(true, false).animate({ scrollTop: 0 }, 400, 'swing');
   });
 }
 
@@ -446,9 +455,17 @@ function initSmoothScroll() {
     const target = $(this).attr('href');
     if (target !== '#' && $(target).length) {
       e.preventDefault();
+      
+      // إيقاف أي scroll animations شغالة
+      $('html, body').stop(true, false);
+      
+      // حساب المكان المستهدف
+      const targetOffset = $(target).offset().top - 80;
+      
+      // scroll أسرع وأكثر سلاسة
       $('html, body').animate({
-        scrollTop: $(target).offset().top - 80
-      }, 800);
+        scrollTop: targetOffset
+      }, 100, 'swing');
     }
   });
 }
