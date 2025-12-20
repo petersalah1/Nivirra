@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | Nivirra Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="127x76" href="./images/icon.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="payment-page">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html">
+        <img class="w-100" src="./images/logo.png" alt="Nivirra">
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center fs-5">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="trips.html">Trips</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#tailor">Tailor Tour</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#offers">Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#map">Map</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row g-4">
+
+      <!-- PAYMENT FORM -->
+      <div class="col-lg-7">
+        <div class="checkout-box">
+          <h4 class="mb-4">
+            <i class="fas fa-credit-card me-2" style="color: var(--primary)"></i>
+            Payment Details
+          </h4>
+
+          <form id="paymentForm">
+            <div class="mb-3">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="fullName" class="form-control" placeholder="John Doe" required>
+              <div class="invalid-feedback">Please enter your full name.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email Address *</label>
+              <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Card Number *</label>
+              <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19" required>
+              <div class="invalid-feedback">Please enter a valid card number.</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Expiry Date *</label>
+                <input type="text" id="expiry" class="form-control" placeholder="MM / YY" maxlength="7" required>
+                <div class="invalid-feedback">Please enter expiry date.</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">CVV *</label>
+                <input type="text" id="cvv" class="form-control" placeholder="123" maxlength="3" required>
+                <div class="invalid-feedback">Please enter CVV.</div>
+              </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+              <i class="fas fa-shield-alt me-2"></i>
+              Your payment information is secure and encrypted.
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 py-3 mt-3">
+              <i class="fas fa-lock me-2"></i>
+              Confirm & Pay
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="col-lg-5">
+        <div class="order-summary">
+          <!-- Content will be loaded dynamically -->
+          <div class="text-center py-4">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3 text-muted">Loading trip details...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Nivirra</h5>
+          <p class="small">We design unforgettable adventures around Luxor and Aswan, tailored to suit your budget and interests.</p>
+        </div>
+        <div class="col-md-2 mb-3">
+          <h6>Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="trips.html">Trips</a></li>
+            <li><a href="index.html#tailor">Tailor Tour</a></li>
+            <li><a href="index.html#offers">Offers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>Contact</h6>
+          <p class="small">Phone: +20 123 456 789<br>Email: hello@nivirra.com</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>Follow</h6>
+          <p class="small">Social links here</p>
+        </div>
+      </div>
+      <div class="text-center mt-3 small text-muted">© 2025 Nivirra All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/payment.js"></script>
+
+</body>
+</html>

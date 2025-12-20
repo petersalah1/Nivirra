@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="127x76" href="./images/icon.png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  
+  <title>Trip Details - Nivirra</title>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand brand" href="index.html">
+        <img class="w-100" src="./images/logo.png" alt="Nivirra">
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center fs-5">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="trips.html">Trips</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#tailor">Tailor Tour</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#offers">Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#map">Map</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Loading State -->
+  <div id="loading" class="loading-state">
+    <div class="loading-spinner"></div>
+    <p class="text-muted">Loading trip details...</p>
+  </div>
+
+  <!-- Trip Content (Hidden initially) -->
+  <div id="tripContent" style="display: none;">
+    
+    <!-- Hero Section -->
+    <section class="trip-detail-hero" id="heroSection">
+      <div class="container trip-hero-content">
+        <h1 id="tripTitle">Trip Title</h1>
+        <p class="subtitle" id="tripSubtitle">Subtitle</p>
+      </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="details-section">
+      <div class="container">
+        <div class="row g-4">
+          
+          <!-- Left Column: Details -->
+          <div class="col-lg-8">
+            <div class="details-card fade-in">
+              
+              <!-- Info Badges -->
+              <div class="mb-4">
+                <span class="info-badge">
+                  <i class="fas fa-calendar"></i>
+                  <span id="tripDays">0 Days</span>
+                </span>
+                <span class="info-badge">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span id="tripCity">City</span>
+                </span>
+                <span class="info-badge">
+                  <i class="fas fa-tag"></i>
+                  <span id="tripType">Type</span>
+                </span>
+              </div>
+
+              <!-- Description -->
+              <h3 class="detail-section-title">About This Trip</h3>
+              <p class="description-text" id="tripDescription">
+                Embark on an unforgettable journey through Egypt's most treasured destinations.
+                This carefully curated experience combines history, culture, and adventure,
+                offering you a unique perspective on Egypt's timeless wonders.
+              </p>
+
+              <!-- Highlights -->
+              <div class="highlight-box">
+                <h5 class="mb-3" style="color: var(--primary); font-weight: 700;">
+                  <i class="fas fa-star"></i> Trip Highlights
+                </h5>
+                <ul class="mb-0" id="tripHighlights">
+                  <li>Loading highlights...</li>
+                </ul>
+              </div>
+
+              <!-- What's Included -->
+              <h3 class="detail-section-title mt-5">What's Included</h3>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 1.3rem;"></i>
+                    <div>
+                      <strong>Accommodation</strong>
+                      <p class="text-muted mb-0 small">Comfortable hotels with breakfast</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 1.3rem;"></i>
+                    <div>
+                      <strong>Transportation</strong>
+                      <p class="text-muted mb-0 small">Air-conditioned vehicles</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 1.3rem;"></i>
+                    <div>
+                      <strong>Professional Guide</strong>
+                      <p class="text-muted mb-0 small">Expert Egyptologist guide</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 1.3rem;"></i>
+                    <div>
+                      <strong>Entry Fees</strong>
+                      <p class="text-muted mb-0 small">All site entrance tickets</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Price & Booking -->
+          <div class="col-lg-4">
+            <div class="details-card fade-in" style="animation-delay: 0.2s;">
+              
+              <!-- Price Box -->
+              <div class="price-box">
+                <div class="price-label">Starting from</div>
+                <div class="price-amount">$<span id="tripPrice">0</span></div>
+                <div class="price-label">per person</div>
+                <button type="button" class="btn btn-book w-100 mt-3">
+                  <i class="fas fa-paper-plane me-2"></i>
+                  Book Now
+                </button>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="mt-4 p-3 bg-light rounded">
+                <h6 class="fw-bold mb-3">Need Help?</h6>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fas fa-phone text-primary me-2"></i>
+                  <span>+20 123 456 789</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <i class="fas fa-envelope text-primary me-2"></i>
+                  <span>hello@nivirra.com</span>
+                </div>
+                <div class="d-flex align-items-center" style="cursor: pointer;">
+                  <i class="fab fa-whatsapp text-success me-2"></i>
+                  <span>WhatsApp Support</span>
+                </div>
+              </div>
+
+              <!-- Quick Facts -->
+              <div class="mt-4 p-3 bg-light rounded">
+                <h6 class="fw-bold mb-3">Quick Facts</h6>
+                <div class="small">
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Group Size:</span>
+                    <strong>2-12 people</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span class="text-muted">Language:</span>
+                    <strong>English, Arabic</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">Cancellation:</span>
+                    <strong>Free up to 48h</strong>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Nivirra</h5>
+          <p class="small">We design unforgettable adventures around Luxor and Aswan, tailored to suit your budget and interests.</p>
+        </div>
+        <div class="col-md-2 mb-3">
+          <h6>Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="trips.html">Trips</a></li>
+            <li><a href="index.html#tailor">Tailor Tour</a></li>
+            <li><a href="index.html#offers">Offers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>Contact</h6>
+          <p class="small">Phone: +20 123 456 789<br>Email: hello@nivirra.com</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>Follow</h6>
+          <p class="small">Social links here</p>
+        </div>
+      </div>
+      <div class="text-center mt-3 small text-muted">© 2025 Nivirra All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/trip-details.js"></script>
+
+</body>
+</html>

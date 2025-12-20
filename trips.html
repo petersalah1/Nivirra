@@ -6,94 +6,114 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Nivirra — Trips</title>
 
+  <!-- CSS -->
   <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
-
 </head>
 
 <body>
 
-
-
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand brand" href="#">
-        <img class="w-100" src="./images/logo.png" alt="">
+      <a class="navbar-brand brand" href="index.html">
+        <img class="w-100" src="./images/logo.png" alt="Nivirra">
       </a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span
-          class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav ms-auto align-items-lg-center fs-5">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#trips">Trips</a></li>
-          <li class="nav-item"><a class="nav-link" href="./index.html">Tailor Tour</a></li>
-          <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
+          <li class="nav-item"><a class="nav-link active" href="trips.html">Trips</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#tailor">Tailor Tour</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#offers">Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#feedback">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#map">Map</a></li>
         </ul>
-        <!-- <a class="btn btn-sm ms-3" href="#contact"
-          style="background:var(--primary);color:#fff;border-radius:10px;padding:10px 14px;font-weight:700">Enquire
-          Now</a> -->
       </div>
     </div>
   </nav>
-
-
-
-
 
   <!-- HERO -->
   <header class="hero-trips text-center">
     <div class="container">
       <div class="w-50 m-auto">
-        <!-- <div class="container"> -->
-          <h1 class="text-white text-uppercase">Luxury Travel Experiences</h1>
-        <!-- </div> -->
+        <h1 class="text-white text-uppercase">Luxury Travel Experiences</h1>
       </div>
     </div>
   </header>
 
-
-
-
-
-
-
-
-  
-  
-  <section class="desc m-auto text-dark">
+  <!-- Description Section -->
+  <section class="desc text-dark">
     <div class="container">
-      <h5 class="fw-bold mb-4">From Nile to ancient temples, Luxor and Aswan await you. </h5>
+      <h5 class="fw-bold mb-4">From Nile to ancient temples, Luxor and Aswan await you.</h5>
       <p class="text-trip m-auto">
-        Experience history, culture, and hidden gems your way – at your pace or beyond your limits.
-        Have a passion? Photography, sailing, or local crafts – we’ll craft the trip around it.
+        Experience history, culture, and hidden gems your way — at your pace or beyond your limits.
+        Have a passion? Photography, sailing, or local crafts — we'll craft the trip around it.
       </p>
     </div>
   </section>
-  
-  <main class="container pb-5 bt-grid">
 
+  <!-- Trips Grid -->
+  <main class="container pb-5 bt-grid">
     <section>
-      
       <div class="text-center py-4">
         <h1 class="h4 mb-1">Trips</h1>
         <div class="text-muted">Explore our available trips — click any tile to view details.</div>
       </div>
 
       <div class="my-3 search">
-        <input id="q" class="form-control w-25" placeholder="Search trips by name, city or type" style="min-width:220px">
+        <input id="q" class="form-control w-25" placeholder="Search trips by name, city or type"
+          style="min-width:220px">
       </div>
     </section>
 
     <!-- Grid: tiles injected by JS -->
     <div id="grid" class="row g-3"></div>
 
-    <div id="empty" class="text-center text-muted mt-4" style="display:none">No trips found.</div>
+    <div id="empty" class="text-center text-muted mt-4" style="display:none">
+      <i class="fas fa-search" style="font-size: 3rem; opacity: 0.3;"></i>
+      <p class="mt-3">No trips found matching your search.</p>
+    </div>
   </main>
 
-  <!-- Load the separate JS file (trips-data.js) -->
-   <script src="./js/bootstrap.bundle.min.js"></script>
-  <script src="./js/trips-data.js"></script>
+  <!-- Footer -->
+  <footer class="py-5 mt-5">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Nivirra</h5>
+          <p class="small">We design unforgettable adventures around Luxor and Aswan, tailored to suit your budget and
+            interests.</p>
+        </div>
+        <div class="col-md-2 mb-3">
+          <h6>Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="trips.html">Trips</a></li>
+            <li><a href="index.html#tailor">Tailor Tour</a></li>
+            <li><a href="index.html#offers">Offers</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>Contact</h6>
+          <p class="small">Phone: +20 123 456 789<br>Email: hello@nivirra.com</p>
+        </div>
+        <div class="col-md-3 mb-3">
+          <h6>Follow</h6>
+          <p class="small">Social links here</p>
+        </div>
+      </div>
+      <div class="text-center mt-3 small text-muted">© 2025 Nivirra All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/trips.js"></script>
 </body>
 
 </html>
